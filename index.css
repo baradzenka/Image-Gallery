@@ -23,7 +23,6 @@ body
 
 
 .main {
-	position: relative;
 	margin: 0 auto;
 	max-width: 1000px;
 	min-width: 280px;   /* 320px - body.padding-left - body.padding-right */
@@ -54,7 +53,7 @@ body
 	border-radius: 4px;
 
 	color: white;
-	transition: .15s linear;
+	transition: 0.15s linear;
 	background-color: darkseagreen;	
 
 	letter-spacing: 1.2px;
@@ -111,33 +110,36 @@ body
 
 
 
-.main__banner_error,
-.main__banner_loading {
+.banner-error,
+.banner-loading {
 	display: none;
-	position: absolute;
+
+	position: fixed;
+	left: 50%;	
+	transform: translate(-50%, 0);
 	
 	color: white;
 	border-radius: 4px;
 
 	font-size: 18px;	
 	font-weight: bold;
-	font-family: "Alumni Sans", sans-serif;	
+	font-family: "Alumni Sans", sans-serif;
 }
-.main__banner_error {
-	top: 15vh;
+.banner-error {
+	top: 200px;
 	padding: 15px 20px;
 	letter-spacing: 2px;
 	background-color: #800000e0;
 }
-.main__banner_loading {
-	top: 36vh;
+.banner-loading {
+	top: 50vh;
 	padding: 10px 24px;
 	letter-spacing: 1.8px;
 	background-color: #000000c0;
 }
 @media (max-width: 400px) {   /* <=400 */
-	.main__banner_error,
-	.main__banner_loading {
+	.banner-error,
+	.banner-loading {
 		font-size: 12px;
 	}
 }

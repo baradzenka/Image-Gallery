@@ -93,7 +93,7 @@ function InsertImageToLayout(imageContainer, url)
 
 function ShowBannerError(show, text)
 {
-	let bannerErrorElement = document.querySelector(".main__banner_error");
+	let bannerErrorElement = document.querySelector(".banner-error");
 	if(show)
 		bannerErrorElement.innerHTML = text;
 	bannerErrorElement.style["display"] = (show ? "block" : "none");
@@ -101,6 +101,6 @@ function ShowBannerError(show, text)
 
 function ShowBannerLoading(show)
 {
-	document.querySelector(".main__banner_loading").style["display"] = 
+	document.querySelector(".banner-loading").style["display"] = 
 		(show ? "block" : "none");
 }
