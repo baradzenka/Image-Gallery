@@ -1,14 +1,14 @@
 
 
 const baseUrl = "https://dog.ceo/api/breeds/image/random/";
-const numberPicsAtOnce = 7;   // число фотографий загружаемых за один раз; 0 < numberPicsAtOnce >= 50.
+const numberPicsAtOnce = 7;   // number of photos loaded at one time; 0 < numberPicsAtOnce >= 50.
 
 
 
 const btnLoading = document.querySelector(".main__btn_loading");
 btnLoading.addEventListener("click", OnBtnLoadingClick);
 
-let numLoadingImgs = 0;   // число изображений загружаемых в данный момент.
+let numLoadingImgs = 0;   // number of images currently loading.
 
 async function OnBtnLoadingClick()
 {
@@ -21,11 +21,11 @@ async function OnBtnLoadingClick()
 	{
 		const response = await fetch(url);
 		if(!response.ok)
-			throw Error("Ошибка загрузки данных");
+			throw Error("Error loading data");
 
 		const data = await response.json();
 		if(!HandleLoadedData(data))
-			throw Error("Ошибка загрузки данных");
+			throw Error("Error loading data");
 	}
 	catch(err)
 	{
@@ -76,8 +76,8 @@ function InsertImageToLayout(imageContainer, url)
 	let divElement = document.createElement("div");
 	divElement.className = "main__container-item";
 	divElement.innerHTML = 
-	`	<a href="${url}"><img src="${url}" alt="Рисунок в гелерее"></a>
-		<span>&nbsp${fileName}&nbsp</span>`;
+		`	<a href="${url}"><img src="${url}" alt="Picture in the gallery"></a>
+			<span>&nbsp${fileName}&nbsp</span>`;
 
 	const imgElement = divElement.querySelector("img");
 	imgElement.onload = imgElement.onerror = () =>
